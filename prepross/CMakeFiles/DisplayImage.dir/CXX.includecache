@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/root/Desktop/OCR/DisplayImage.cpp
+stdio.h
+-
+opencv2/opencv.hpp
+-
+DisplayImage.hpp
+/root/Desktop/OCR/DisplayImage.hpp
+opencv/highgui.h
+/root/Desktop/OCR/opencv/highgui.h
+
+/root/Desktop/OCR/DisplayImage.hpp
+unistd.h
+-
+opencv2/opencv.hpp
+-
+DisplayImage.hpp
+/root/Desktop/OCR/DisplayImage.hpp
+opencv/highgui.h
+/root/Desktop/OCR/opencv/highgui.h
+

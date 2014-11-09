@@ -1,0 +1,16 @@
+#ifndef __DISPLAYIMAGE__HPP__
+ 
+# define __DISPLAYIMAGE__HPP__
+
+class Displayimage
+{
+public: 
+  Displayimage();
+  ~Displayimage();
+  
+
+  
+
+};
+
+#endif

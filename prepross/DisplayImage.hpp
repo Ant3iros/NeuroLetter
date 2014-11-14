@@ -51,17 +51,20 @@ class DisplayImage
     cvDilate(mask, mask, kernel, 1);
     cvErode(mask, mask, kernel, 1);  
  
+    std::cout << std::endl;
     // We go through the mask to look for the tracked object and get its gravity center
     for(x = 0; x < mask->width; x++) {
       for(y = 0; y < mask->height; y++) { 
  
 	// If its a tracked pixel, count it to the center of gravity's calcul
-	if(((uchar *)(mask->imageData + y*mask->widthStep))[x] == 255) {
-	  sommeX += x;
-	  sommeY += y;
-	  (nbPixels)++;
+	if(((uchar *)(mask->imageData + x*mask->widthStep))[y] == 255) {
+	  std::cout << "1 ";
+	}
+	else {
+	  std::cout << "0 ";
 	}
       }
+	std::cout << std::endl;
     }
  
     // Show the result of the mask image

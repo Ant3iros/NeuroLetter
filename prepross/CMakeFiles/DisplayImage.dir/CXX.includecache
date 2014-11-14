@@ -6,23 +6,23 @@
 
 #IncludeRegexTransform: 
 
-/root/Desktop/OCR/DisplayImage.cpp
+/root/Desktop/NeuroLetter/prepross/DisplayImage.cpp
 stdio.h
 -
 opencv2/opencv.hpp
 -
 DisplayImage.hpp
-/root/Desktop/OCR/DisplayImage.hpp
+/root/Desktop/NeuroLetter/prepross/DisplayImage.hpp
 opencv/highgui.h
-/root/Desktop/OCR/opencv/highgui.h
+/root/Desktop/NeuroLetter/prepross/opencv/highgui.h
 
-/root/Desktop/OCR/DisplayImage.hpp
+/root/Desktop/NeuroLetter/prepross/DisplayImage.hpp
 unistd.h
 -
 opencv2/opencv.hpp
 -
 DisplayImage.hpp
-/root/Desktop/OCR/DisplayImage.hpp
+/root/Desktop/NeuroLetter/prepross/DisplayImage.hpp
 opencv/highgui.h
-/root/Desktop/OCR/opencv/highgui.h
+/root/Desktop/NeuroLetter/prepross/opencv/highgui.h
 

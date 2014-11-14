@@ -1,1 +1,1 @@
-/root/Desktop/OCR/CMakeFiles/DisplayImage.dir
+/root/Desktop/NeuroLetter/prepross/CMakeFiles/DisplayImage.dir

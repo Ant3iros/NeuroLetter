@@ -23,7 +23,7 @@ class DisplayImage
     h = 0;
     s = 0;
     v = 0;
-    tolerance = 50;
+    tolerance =50;
   }
 
   void binarisation()
@@ -42,7 +42,7 @@ class DisplayImage
     cvCvtColor(image, hsv, CV_BGR2HSV);
  
     // We create the mask
-    cvInRangeS(hsv, cvScalar(h - tolerance -1, s - tolerance, 0), cvScalar(h + tolerance -1, s + tolerance, 255), mask);
+    cvInRangeS(hsv, cvScalar(h - tolerance -1, s - tolerance, 0), cvScalar(h + tolerance -1, s + tolerance, 150), mask);
  
     // Create kernels for the morphological operation
     kernel = cvCreateStructuringElementEx(5, 5, 2, 2, CV_SHAPE_ELLIPSE);

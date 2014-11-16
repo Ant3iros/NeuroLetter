@@ -91,7 +91,10 @@ class DisplayImage
     
     //taille str
     //convert to string -> this->str.size();
-    //outfile.write(char *, size);
+    std::stringstream ss;
+    ss << this->str.size();
+    std::string test  = ss.str();
+    outfile.write(test.c_str(), test.size());
 
     //const définie par YOYO
     outfile.write(", 95\n", 5);

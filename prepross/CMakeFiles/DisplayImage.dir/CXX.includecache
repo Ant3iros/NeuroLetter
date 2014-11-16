@@ -19,6 +19,10 @@ opencv/highgui.h
 /root/Desktop/NeuroLetter/prepross/DisplayImage.hpp
 unistd.h
 -
+stdio.h
+-
+stdlib.h
+-
 string
 -
 fstream

@@ -1,0 +1,38 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/root/Desktop/NeuroLetter/prepross_2/DisplayImage.cpp
+stdio.h
+-
+opencv2/opencv.hpp
+-
+DisplayImage.hpp
+/root/Desktop/NeuroLetter/prepross_2/DisplayImage.hpp
+opencv/highgui.h
+/root/Desktop/NeuroLetter/prepross_2/opencv/highgui.h
+
+/root/Desktop/NeuroLetter/prepross_2/DisplayImage.hpp
+unistd.h
+-
+stdio.h
+-
+stdlib.h
+-
+string
+-
+vector
+-
+fstream
+-
+opencv2/opencv.hpp
+-
+DisplayImage.hpp
+/root/Desktop/NeuroLetter/prepross_2/DisplayImage.hpp
+opencv/highgui.h
+/root/Desktop/NeuroLetter/prepross_2/opencv/highgui.h
+

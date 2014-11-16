@@ -16,16 +16,5 @@ int main(int argc, char** argv )
 
   DisplayImage *display = new DisplayImage(argv[1]);
 
-  /*IplImage *image, *imagePNG, *mask;
-  imagePNG = cvLoadImage(argv[1]);
-  std::cout << argv[1] << std::endl;
-  
-  //Mat image;
-  //image = imread( argv[1], 1 );
-  cv::namedWindow("Display Image", CV_WINDOW_AUTOSIZE );
-  //cv::imshow("Display Image", imagePNG);
-  
-  cv::waitKey(0);
-  */
   return 0;
 }

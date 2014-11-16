@@ -3,9 +3,12 @@
 # define __DISPLAYIMAGE__HPP__
 
 #include <unistd.h>
+#include <string>
+#include <fstream>
 #include <opencv2/opencv.hpp>
 #include "DisplayImage.hpp"
 #include "opencv/highgui.h"
+
 //#include "opencv/cv.h"
 
 class DisplayImage
@@ -17,7 +20,8 @@ class DisplayImage
   int tolerance; 
   int nbPixels;
   CvPoint objectNextPos;
-  
+  std::string str;
+
   void initialize()
   {
     h = 0;
@@ -55,13 +59,14 @@ class DisplayImage
     // We go through the mask to look for the tracked object and get its gravity center
     for(x = 0; x < mask->width; x++) {
       for(y = 0; y < mask->height; y++) { 
- 
 	// If its a tracked pixel, count it to the center of gravity's calcul
 	if(((uchar *)(mask->imageData + x*mask->widthStep))[y] == 255) {
 	  std::cout << "1 ";
+	  this->str.insert(this->str.size(), "1 ");
 	}
 	else {
 	  std::cout << "0 ";
+	  this->str.insert(this->str.size(), "0 ");
 	}
       }
 	std::cout << std::endl;
@@ -72,17 +77,23 @@ class DisplayImage
  
     // We release the memory of kernels
     cvReleaseStructuringElement(&kernel);
- 
-    // We release the memory of the mask
-    cvReleaseImage(&mask);
-    // We release the memory of the hsv image
-    cvReleaseImage(&hsv);
- 
-    // If there is no pixel, we return a center outside the image, else we return the center of gravity
-    if(nbPixels > 0)
-      objectNextPos = cvPoint((int)(sommeX / (nbPixels)), (int)(sommeY / (nbPixels)));
-    else
-      objectNextPos = cvPoint(-1, -1);
+    
+  }
+
+  void	putInFile() {
+    //?? , taille de str, 95
+    std::ofstream outfile("new.txt",std::ofstream::binary);
+    
+    //const attendre le retour de YOYO et darbou
+    outfile.write("12 ", 3);
+    
+    //outfile.write();
+
+    //const définie par YOYO
+    outfile.write("95\n", 3);
+
+    //core
+    outfile.write(this->str.c_str(), this->str.size()); 
   }
 
 public:
@@ -103,6 +114,7 @@ public:
     image = cvLoadImage(path);
     cvShowImage("Color Tracking", image);
     this->binarisation();
+    this->putInFile();
 
     cvShowImage("Color Tracking", image);
     cvWaitKey(0);

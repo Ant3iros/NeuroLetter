@@ -3,6 +3,8 @@
 # define __DISPLAYIMAGE__HPP__
 
 #include <unistd.h>
+#include <stdio.h>
+#include <stdlib.h>
 #include <string>
 #include <fstream>
 #include <opencv2/opencv.hpp>
@@ -85,12 +87,14 @@ class DisplayImage
     std::ofstream outfile("new.txt",std::ofstream::binary);
     
     //const attendre le retour de YOYO et darbou
-    outfile.write("12 ", 3);
+    outfile.write("12, ", 4);
     
-    //outfile.write();
+    //taille str
+    //convert to string -> this->str.size();
+    //outfile.write(char *, size);
 
     //const définie par YOYO
-    outfile.write("95\n", 3);
+    outfile.write(", 95\n", 5);
 
     //core
     outfile.write(this->str.c_str(), this->str.size()); 

@@ -4,7 +4,7 @@ SET(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 SET(CMAKE_DEPENDS_CHECK_CXX
-  "/root/Desktop/NeuroLetter/prepross_2/DisplayImage.cpp" "/root/Desktop/NeuroLetter/prepross_2/CMakeFiles/DisplayImage.dir/DisplayImage.cpp.o"
+  "/home/benjamin/Documents/perso/neuro/NeuroLetter/prepross_2/DisplayImage.cpp" "/home/benjamin/Documents/perso/neuro/NeuroLetter/prepross_2/CMakeFiles/DisplayImage.dir/DisplayImage.cpp.o"
   )
 SET(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -14,6 +14,8 @@ SET(CMAKE_TARGET_LINKED_INFO_FILES
 
 # The include file search paths:
 SET(CMAKE_C_TARGET_INCLUDE_PATH
+  "/usr/local/include/opencv"
+  "/usr/local/include"
   )
 SET(CMAKE_CXX_TARGET_INCLUDE_PATH ${CMAKE_C_TARGET_INCLUDE_PATH})
 SET(CMAKE_Fortran_TARGET_INCLUDE_PATH ${CMAKE_C_TARGET_INCLUDE_PATH})

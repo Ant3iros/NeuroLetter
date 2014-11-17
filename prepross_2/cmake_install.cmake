@@ -1,4 +1,4 @@
-# Install script for directory: /root/Desktop/NeuroLetter/prepross_2
+# Install script for directory: /home/benjamin/Documents/perso/neuro/NeuroLetter/prepross_2
 
 # Set the install prefix
 IF(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -38,7 +38,7 @@ ELSE(CMAKE_INSTALL_COMPONENT)
   SET(CMAKE_INSTALL_MANIFEST "install_manifest.txt")
 ENDIF(CMAKE_INSTALL_COMPONENT)
 
-FILE(WRITE "/root/Desktop/NeuroLetter/prepross_2/${CMAKE_INSTALL_MANIFEST}" "")
+FILE(WRITE "/home/benjamin/Documents/perso/neuro/NeuroLetter/prepross_2/${CMAKE_INSTALL_MANIFEST}" "")
 FOREACH(file ${CMAKE_INSTALL_MANIFEST_FILES})
-  FILE(APPEND "/root/Desktop/NeuroLetter/prepross_2/${CMAKE_INSTALL_MANIFEST}" "${file}\n")
+  FILE(APPEND "/home/benjamin/Documents/perso/neuro/NeuroLetter/prepross_2/${CMAKE_INSTALL_MANIFEST}" "${file}\n")
 ENDFOREACH(file)

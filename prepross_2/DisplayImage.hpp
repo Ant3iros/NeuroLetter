@@ -1,5 +1,5 @@
 #ifndef __DISPLAYIMAGE__HPP__
- 
+
 # define __DISPLAYIMAGE__HPP__
 
 #include <unistd.h>
@@ -20,11 +20,12 @@ class DisplayImage
   int h;
   int s;
   int v;
-  int tolerance; 
+  int tolerance;
   int nbPixels;
   CvPoint objectNextPos;
   std::vector<std::vector<int > > vec;
-  std::vector<std::vector<int > > data;
+  std::vector<std::vector<std::vector<int > > > data;
+  std::vector<std::vector<std::vector<int > > > wordList;
 
   void initialize()
   {
@@ -41,29 +42,29 @@ class DisplayImage
     IplConvKernel *kernel;
     int sommeX = 0, sommeY = 0;
     nbPixels = 0;
- 
+
     // Create the mask &initialize it to white (no color detected)
     mask = cvCreateImage(cvGetSize(image), image->depth, 1);
- 
+
     // Create the hsv image
     hsv = cvCloneImage(image);
     cvCvtColor(image, hsv, CV_BGR2HSV);
- 
+
     // We create the mask
     cvInRangeS(hsv, cvScalar(h - tolerance -1, s - tolerance, 0), cvScalar(h + tolerance -1, s + tolerance, 150), mask);
- 
+
     // Create kernels for the morphological operation
     kernel = cvCreateStructuringElementEx(5, 5, 2, 2, CV_SHAPE_ELLIPSE);
- 
+
     // Morphological opening (inverse because we have white pixels on black background)
     cvDilate(mask, mask, kernel, 1);
-    cvErode(mask, mask, kernel, 1);  
- 
+    cvErode(mask, mask, kernel, 1);
+
     std::cout << std::endl;
     // We go through the mask to look for the tracked object and get its gravity center
     for(x = 0; x < mask->width; x++) {
       std::vector<int > tmp;
-      for(y = 0; y < mask->height; y++) { 
+      for(y = 0; y < mask->height; y++) {
 	if(((uchar *)(mask->imageData + x*mask->widthStep))[y] == 255) {
 	  //std::cout << "1 ";
 	  tmp.push_back(1);
@@ -71,71 +72,111 @@ class DisplayImage
 	else {
 	  //	  std::cout << "0 ";
 	  tmp.push_back(0);
-	}	
+	}
       }
-      this->vec.push_back(tmp);	
+      this->vec.push_back(tmp);
       //std::cout << std::endl;
     }
     showVec(this->vec);
-    creatLineAndWord(0);
-    showVec(this->data);
+    creatLines(0);
+    creatWords();
+    showData();
 
     // Show the result of the mask image
     cvShowImage("Mask", mask);
- 
+
     // We release the memory of kernels
     cvReleaseStructuringElement(&kernel);
-    
+
   }
 
   void  addLine(int y1, int y2) {
+    std::vector<std::vector<int > > tmp;
+
     while (y1 < y2) {
-      this->data.push_back(this->vec[y1]);
+      tmp.push_back(this->vec[y1]);
       y1++;
     }
+    this->data.push_back(tmp);
   }
-  
-  void	creatLineAndWord(int tmp_y1) {
-    
+
+    void        creatWords() {
+      /* int balise = 0;
+      int balise2;
+      int tmp_x2;
+
+      for (int z = 0; z < ; z++) {
+
+        for (int x = 0; y < ; y++) {
+          for (int y = 0; x < ; x++) {
+            if (vec[y][x] == 1 && balise == 0) {
+            }
+            else if (vec[y][x] == 1 && balise == 1)
+              }
+          }
+        }
+        }*/
+    }
+
+    void	creatLines(int tmp_y1) {
+
     int balise = 0;
     int balise2;
     int tmp_y2;
-    
+
     for (int y = tmp_y1; y < vec.size(); y++) {
+
       balise2 = 0;
+
       for (int x = 0; x < vec[y].size(); x++) {
 	if (vec[y][x] == 1 && balise == 0) {
-	  tmp_y1 = y;
+          tmp_y1 = y;
 	  balise = 1;
 	  balise2 = 1;
 	}
 	else if (vec[y][x] == 1 && balise == 1)
 	  balise2 = 1;
       }
+
       if (balise == 1 && balise2 == 0) {
 	addLine(tmp_y1, y);
 	balise = 0;
+        tmp_y1 = y;
       }
+
     }
   }
 
-  void	showVec(std::vector<std::vector<int > > tab) {
-    std::cout << "ShowVec " << tab.size() << std::endl;
-    for (int y = 0; y < tab.size(); y++) {
+    void        showData() {
+      std::cout << "ShowVec " << this->data.size() << std::endl;
+      for (int z = 0; z < this->data.size(); z++) {
+        for (int y = 0; y < this->data[z].size(); y++) {
+          for (int x = 0; x < this->data[z][y].size(); x++) {
+            std::cout << this->data[z][y][x] << " ";
+          }
+          std::cout << std::endl;
+        }
+      }
+      std::cout << "ShowVec " << this->data.size() << std::endl;
+    }
+
+    void        showVec(std::vector<std::vector<int > > tab) {
+      std::cout << "ShowVec " << tab.size() << std::endl;
+    /*for (int y = 0; y < tab.size(); y++) {
       for (int x = 0; x < tab[y].size(); x++) {
 	std::cout << tab[y][x] << " ";
       }
       std::cout << std::endl;
-    }
+      }*/
   }
 
   void	putInFile() {
     //?? , taille de str, 95
     std::ofstream outfile("new.txt",std::ofstream::binary);
-    
+
     //const attendre le retour de YOYO et darbou
     outfile.write("12, ", 4);
-    
+
     //taille str
     //convert to string -> this->str.size();
     std::stringstream ss;
@@ -147,11 +188,11 @@ class DisplayImage
     outfile.write(", 95\n", 5);
 
     //core
-    //outfile.write(this->str.c_str(), this->str.size()); 
+    //outfile.write(this->str.c_str(), this->str.size());
   }
 
 public:
-  DisplayImage(void) 
+  DisplayImage(void)
   {
     std::cout << "ERROR - Give path of image" << std::endl;
   }
@@ -174,14 +215,14 @@ public:
     cvWaitKey(0);
   }
 
-  ~DisplayImage() 
+  ~DisplayImage()
   {
     cvDestroyWindow("Color Tracking");
     cvDestroyWindow("Mask");
   }
-  
 
-  
+
+
 
 };
 

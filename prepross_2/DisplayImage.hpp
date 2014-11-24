@@ -79,8 +79,8 @@ class DisplayImage
     }
     showVec(this->vec);
     creatLines(0);
-    creatWords();
-    showData();
+    //creatWords();
+    //showData();
 
     // Show the result of the mask image
     cvShowImage("Mask", mask);
@@ -97,25 +97,47 @@ class DisplayImage
       tmp.push_back(this->vec[y1]);
       y1++;
     }
-    this->data.push_back(tmp);
+    creatWords(tmp);
   }
 
-    void        creatWords() {
-      /* int balise = 0;
+    void        addWord(int x1, int x2, std::vector<std::vector<int > > line) {
+      std::vector<std::vector<int > > tmp;
+
+      std::cout << std::endl;
+      for (int x = x1; x <= x2; x++) {
+        for (int y = 0; x < line.size(); y++) {
+          std::cout << " " << line[y][x];
+        }
+        std::cout << std::endl;
+      }
+      std::cout << std::endl << std::endl;
+
+    }
+
+    void        creatWords(std::vector<std::vector<int > > line) {
+      int balise = 0;
+      int tmp_x1 = 0;
       int balise2;
       int tmp_x2;
 
-      for (int z = 0; z < ; z++) {
-
-        for (int x = 0; y < ; y++) {
-          for (int y = 0; x < ; x++) {
-            if (vec[y][x] == 1 && balise == 0) {
-            }
-            else if (vec[y][x] == 1 && balise == 1)
-              }
+      for (int x = 0; x < line[0].size(); x++) {
+        balise2 = 0;
+        for (int y = 0; y < line.size(); y++) {
+          if (line[y][x] == 1 && balise == 0) {
+            tmp_x1 = x;
+            balise = 1;
+            balise2++;
           }
+          else if (line[y][x] == 1 && balise == 1)
+            balise2++;
         }
-        }*/
+
+        if (balise == 1 && balise2 < 2) {
+          addWord(tmp_x1, x, line);
+          balise = 0;
+          tmp_x1 = x;
+        }
+      }
     }
 
     void	creatLines(int tmp_y1) {
@@ -132,13 +154,13 @@ class DisplayImage
 	if (vec[y][x] == 1 && balise == 0) {
           tmp_y1 = y;
 	  balise = 1;
-	  balise2 = 1;
+	  balise2++;
 	}
 	else if (vec[y][x] == 1 && balise == 1)
-	  balise2 = 1;
+	  balise2++;
       }
 
-      if (balise == 1 && balise2 == 0) {
+      if (balise == 1 && balise2 < 2) {
 	addLine(tmp_y1, y);
 	balise = 0;
         tmp_y1 = y;

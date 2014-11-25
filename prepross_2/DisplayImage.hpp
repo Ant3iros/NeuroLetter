@@ -80,7 +80,7 @@ class DisplayImage
     showVec(this->vec);
     creatLines(0);
     //creatWords();
-    //showData();
+    showData();
 
     // Show the result of the mask image
     cvShowImage("Mask", mask);
@@ -105,14 +105,16 @@ class DisplayImage
 
     void        addWord(int x1, int x2, std::vector<std::vector<int > > line) {
       std::vector<std::vector<int > > tmp;
+      std::vector<int > tmp2;
 
       for (int y = 0; y < line.size(); y++) {
         for (int x = x1; x < x2; x++) {
-          std::cout << " " << line[y][x];
+          tmp2.push_back(line[y][x]);
         }
-        std::cout << std::endl;
+        tmp.push_back(tmp2);
+        tmp2.clear();
       }
-      std::cout << std::endl << std::endl;
+      data.push_back(tmp);
     }
 
     void        creatWords(std::vector<std::vector<int > > line) {
@@ -180,7 +182,6 @@ class DisplayImage
           std::cout << std::endl;
         }
       }
-      std::cout << "ShowVec " << this->data.size() << std::endl;
     }
 
     void        showVec(std::vector<std::vector<int > > tab) {

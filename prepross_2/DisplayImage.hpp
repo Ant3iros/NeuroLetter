@@ -93,25 +93,26 @@ class DisplayImage
   void  addLine(int y1, int y2) {
     std::vector<std::vector<int > > tmp;
 
-    while (y1 < y2) {
-      tmp.push_back(this->vec[y1]);
-      y1++;
+    if (y1 != y2) {
+      while (y1 < y2) {
+        tmp.push_back(this->vec[y1]);
+        y1++;
+      }
+
+      creatWords(tmp);
     }
-    creatWords(tmp);
   }
 
     void        addWord(int x1, int x2, std::vector<std::vector<int > > line) {
       std::vector<std::vector<int > > tmp;
 
-      std::cout << std::endl;
-      for (int x = x1; x <= x2; x++) {
-        for (int y = 0; x < line.size(); y++) {
+      for (int y = 0; y < line.size(); y++) {
+        for (int x = x1; x < x2; x++) {
           std::cout << " " << line[y][x];
         }
         std::cout << std::endl;
       }
       std::cout << std::endl << std::endl;
-
     }
 
     void        creatWords(std::vector<std::vector<int > > line) {
@@ -132,7 +133,7 @@ class DisplayImage
             balise2++;
         }
 
-        if (balise == 1 && balise2 < 2) {
+        if (balise == 1 && balise2 < 1) {
           addWord(tmp_x1, x, line);
           balise = 0;
           tmp_x1 = x;
@@ -160,7 +161,7 @@ class DisplayImage
 	  balise2++;
       }
 
-      if (balise == 1 && balise2 < 2) {
+      if (balise == 1 && balise2 < 1) {
 	addLine(tmp_y1, y);
 	balise = 0;
         tmp_y1 = y;

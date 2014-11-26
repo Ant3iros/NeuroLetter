@@ -197,22 +197,33 @@ class DisplayImage
   void	putInFile() {
     //?? , taille de str, 95
     std::ofstream outfile("new.txt",std::ofstream::binary);
+    int val = 0;
 
-    //const attendre le retour de YOYO et darbou
-    outfile.write("12, ", 4);
+    for (int z = 0; z < data.size(); z++) {
+      outfile.write("12, ", 4);
 
-    //taille str
-    //convert to string -> this->str.size();
-    std::stringstream ss;
-    //    ss << this->str.size();
-    //std::string test  = ss.str();
-    //outfile.write(test.c_str(), test.size());
+      //taille str
+      //convert to string -> this->str.size();
+      std::stringstream ss;
+      val = this->data[0].size() * this->data[0][0].size();
+      ss << val;
+      std::string test  = ss.str();
+      outfile.write(test.c_str(), test.size());
 
-    //const définie par YOYO
-    outfile.write(", 95\n", 5);
+      //const définie par YOYO
+      outfile.write(", 95\n", 5);
 
-    //core
-    //outfile.write(this->str.c_str(), this->str.size());
+      for (int y = 0; y < data[z].size(); y++) {
+        for (int x = 0; x < data[z][y].size(); x++) {
+          if (this->data[z][y][x] == 1)
+            outfile.write('1', 1);
+          else if (this->data[z][y][x] == 0)
+            outfile.write('0', 1);
+        }
+      }
+      outfile.write('\n', 1);
+    }
+
   }
 
 public:

@@ -215,10 +215,12 @@ class DisplayImage
 
       for (int y = 0; y < data[z].size(); y++) {
         for (int x = 0; x < data[z][y].size(); x++) {
-          if (this->data[z][y][x] == 1)
+          if (this->data[z][y][x] == 1) {
             outfile.write("1", 1);
-          else if (this->data[z][y][x] == 0)
+          }
+          else if (this->data[z][y][x] == 0) {
             outfile.write("0", 1);
+          }
         }
       }
       outfile.write("\n", 1);

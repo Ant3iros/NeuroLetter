@@ -184,13 +184,13 @@ class DisplayImage
 
   void	putInFile() {
     //?? , taille de str, 95
-    std::ofstream outfile("new.txt",std::ofstream::binary);
+    std::ofstream outfile("data.train",std::ofstream::binary);
     int val = 0;
 
     std::cout << "---ADD FILE---" << std::endl << std::endl;
 
     for (int z = 0; z < data.size(); z++) {
-      outfile.write("12, ", 4);
+      outfile.write("12 ", 3);
 
       //taille str
       //convert to string -> this->str.size();
@@ -201,16 +201,16 @@ class DisplayImage
       outfile.write(test.c_str(), test.size());
 
       //const définie par YOYO
-      outfile.write(", 95\n", 5);
+      outfile.write(" 95\n", 4);
 
       for (int y = 0; y < data[z].size(); y++) {
         for (int x = 0; x < data[z][y].size(); x++) {
           if (this->data[z][y][x] == 1) {
-            outfile.write("1", 1);
+            outfile.write("1 ", 2);
             std::cout << "1 ";
           }
           else if (this->data[z][y][x] == 0) {
-            outfile.write("0", 1);
+            outfile.write("0 ", 2);
             std::cout << "0 ";
           }
         }

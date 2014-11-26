@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/root/NeuroLetter/GUI/test.cpp
+SFML/Window.hpp
+-
+SFML/Graphics/Sprite.hpp
+-
+SFML/Graphics.hpp
+-
+SFML/Graphics/Image.hpp
+-
+iostream
+-
+SFML/Window/Input.hpp
+-
+

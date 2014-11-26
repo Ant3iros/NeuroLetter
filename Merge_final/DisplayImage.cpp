@@ -51,12 +51,15 @@ int main(int argc, char** argv )
             window.Close();
           if (event.Type == sf::Event::MouseButtonPressed)
             {
-	      std::cout << "X = "<< window.GetInput().GetMouseX() << " Y = " << window.GetInput().GetMouseY() << std::endl;
+	      
               if ((window.GetInput().GetMouseX() <= 596 && window.GetInput().GetMouseX() >= 398) &&
                   (window.GetInput().GetMouseY() <= 474 && window.GetInput().GetMouseY() >= 439))
-		std::cout << "LAUNCH SUCCEES" <<  std::endl; // ICI faire appelle au reseau de NEURONE
-	      DisplayImage *display = new DisplayImage(argv[1]);
-            }
+		{
+		std::cout << "LAUNCH SUCCEES" <<  std::endl; 
+		DisplayImage *display = new DisplayImage(argv[1]);// ICI faire appelle a la binarisation    
+		// ICI faire appelle au reseau de NEURONE// ICI faire appelle au reseau de NEURONE
+		}
+	    }
         }
     }
   return 0;

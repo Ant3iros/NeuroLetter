@@ -81,7 +81,7 @@ class DisplayImage
     //    showData();
 
     // Show the result of the mask image
-    cvShowImage("Mask", mask);
+    //cvShowImage("Mask", mask);
 
     // We release the memory of kernels
     cvReleaseStructuringElement(&kernel);
@@ -232,24 +232,24 @@ public:
   {
     this->initialize();
 
-    cvNamedWindow("Color Tracking", CV_WINDOW_AUTOSIZE);
-    cvNamedWindow("Mask", CV_WINDOW_AUTOSIZE);
-    cvMoveWindow("Color Tracking", 0, 100);
-    cvMoveWindow("Mask", 650, 100);
+    // cvNamedWindow("Color Tracking", CV_WINDOW_AUTOSIZE);
+    //cvNamedWindow("Mask", CV_WINDOW_AUTOSIZE);
+    //cvMoveWindow("Color Tracking", 0, 100);
+    //cvMoveWindow("Mask", 650, 100);
 
     image = cvLoadImage(path);
-    cvShowImage("Color Tracking", image);
+    //cvShowImage("Color Tracking", image);
     this->binarisation();
     this->putInFile();
 
-    cvShowImage("Color Tracking", image);
-    cvWaitKey(0);
+    //cvShowImage("Color Tracking", image);
+    //cvWaitKey(0);
   }
 
   ~DisplayImage()
   {
-    cvDestroyWindow("Color Tracking");
-    cvDestroyWindow("Mask");
+    //cvDestroyWindow("Color Tracking");
+    //cvDestroyWindow("Mask");
   }
 
 };

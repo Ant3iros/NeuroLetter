@@ -77,10 +77,8 @@ class DisplayImage
       this->vec.push_back(tmp);
       //std::cout << std::endl;
     }
-    showVec(this->vec);
     creatLines(0);
-    //creatWords();
-    showData();
+    //    showData();
 
     // Show the result of the mask image
     cvShowImage("Mask", mask);
@@ -184,20 +182,12 @@ class DisplayImage
       }
     }
 
-    void        showVec(std::vector<std::vector<int > > tab) {
-      std::cout << "ShowVec " << tab.size() << std::endl;
-    /*for (int y = 0; y < tab.size(); y++) {
-      for (int x = 0; x < tab[y].size(); x++) {
-	std::cout << tab[y][x] << " ";
-      }
-      std::cout << std::endl;
-      }*/
-  }
-
   void	putInFile() {
     //?? , taille de str, 95
     std::ofstream outfile("new.txt",std::ofstream::binary);
     int val = 0;
+
+    std::cout << "---ADD FILE---" << std::endl << std::endl;
 
     for (int z = 0; z < data.size(); z++) {
       outfile.write("12, ", 4);
@@ -217,13 +207,17 @@ class DisplayImage
         for (int x = 0; x < data[z][y].size(); x++) {
           if (this->data[z][y][x] == 1) {
             outfile.write("1", 1);
+            std::cout << "1 ";
           }
           else if (this->data[z][y][x] == 0) {
             outfile.write("0", 1);
+            std::cout << "0 ";
           }
         }
+        std::cout << std::endl;
       }
       outfile.write("\n", 1);
+      std::cout << std::endl;
     }
 
   }
@@ -257,9 +251,6 @@ public:
     cvDestroyWindow("Color Tracking");
     cvDestroyWindow("Mask");
   }
-
-
-
 
 };
 

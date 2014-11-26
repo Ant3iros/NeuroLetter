@@ -1,4 +1,4 @@
-# Install script for directory: /root/NeuroLetter/Merge_final
+# Install script for directory: /root/Desktop/NeuroLetter/Merge_final
 
 # Set the install prefix
 IF(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -38,7 +38,7 @@ ELSE(CMAKE_INSTALL_COMPONENT)
   SET(CMAKE_INSTALL_MANIFEST "install_manifest.txt")
 ENDIF(CMAKE_INSTALL_COMPONENT)
 
-FILE(WRITE "/root/NeuroLetter/Merge_final/release/${CMAKE_INSTALL_MANIFEST}" "")
+FILE(WRITE "/root/Desktop/NeuroLetter/Merge_final/release/${CMAKE_INSTALL_MANIFEST}" "")
 FOREACH(file ${CMAKE_INSTALL_MANIFEST_FILES})
-  FILE(APPEND "/root/NeuroLetter/Merge_final/release/${CMAKE_INSTALL_MANIFEST}" "${file}\n")
+  FILE(APPEND "/root/Desktop/NeuroLetter/Merge_final/release/${CMAKE_INSTALL_MANIFEST}" "${file}\n")
 ENDFOREACH(file)

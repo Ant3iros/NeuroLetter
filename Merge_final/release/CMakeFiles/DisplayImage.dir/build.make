@@ -35,10 +35,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/NeuroLetter/Merge_final
+CMAKE_SOURCE_DIR = /root/Desktop/NeuroLetter/Merge_final
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/NeuroLetter/Merge_final/release
+CMAKE_BINARY_DIR = /root/Desktop/NeuroLetter/Merge_final/release
 
 # Include any dependencies generated for this target.
 include CMakeFiles/DisplayImage.dir/depend.make
@@ -51,17 +51,17 @@ include CMakeFiles/DisplayImage.dir/flags.make
 
 CMakeFiles/DisplayImage.dir/DisplayImage.cpp.o: CMakeFiles/DisplayImage.dir/flags.make
 CMakeFiles/DisplayImage.dir/DisplayImage.cpp.o: ../DisplayImage.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /root/NeuroLetter/Merge_final/release/CMakeFiles $(CMAKE_PROGRESS_1)
+	$(CMAKE_COMMAND) -E cmake_progress_report /root/Desktop/NeuroLetter/Merge_final/release/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/DisplayImage.dir/DisplayImage.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/DisplayImage.dir/DisplayImage.cpp.o -c /root/NeuroLetter/Merge_final/DisplayImage.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/DisplayImage.dir/DisplayImage.cpp.o -c /root/Desktop/NeuroLetter/Merge_final/DisplayImage.cpp
 
 CMakeFiles/DisplayImage.dir/DisplayImage.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/DisplayImage.dir/DisplayImage.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /root/NeuroLetter/Merge_final/DisplayImage.cpp > CMakeFiles/DisplayImage.dir/DisplayImage.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /root/Desktop/NeuroLetter/Merge_final/DisplayImage.cpp > CMakeFiles/DisplayImage.dir/DisplayImage.cpp.i
 
 CMakeFiles/DisplayImage.dir/DisplayImage.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/DisplayImage.dir/DisplayImage.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /root/NeuroLetter/Merge_final/DisplayImage.cpp -o CMakeFiles/DisplayImage.dir/DisplayImage.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /root/Desktop/NeuroLetter/Merge_final/DisplayImage.cpp -o CMakeFiles/DisplayImage.dir/DisplayImage.cpp.s
 
 CMakeFiles/DisplayImage.dir/DisplayImage.cpp.o.requires:
 .PHONY : CMakeFiles/DisplayImage.dir/DisplayImage.cpp.o.requires
@@ -129,6 +129,6 @@ CMakeFiles/DisplayImage.dir/clean:
 .PHONY : CMakeFiles/DisplayImage.dir/clean
 
 CMakeFiles/DisplayImage.dir/depend:
-	cd /root/NeuroLetter/Merge_final/release && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/NeuroLetter/Merge_final /root/NeuroLetter/Merge_final /root/NeuroLetter/Merge_final/release /root/NeuroLetter/Merge_final/release /root/NeuroLetter/Merge_final/release/CMakeFiles/DisplayImage.dir/DependInfo.cmake --color=$(COLOR)
+	cd /root/Desktop/NeuroLetter/Merge_final/release && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/Desktop/NeuroLetter/Merge_final /root/Desktop/NeuroLetter/Merge_final /root/Desktop/NeuroLetter/Merge_final/release /root/Desktop/NeuroLetter/Merge_final/release /root/Desktop/NeuroLetter/Merge_final/release/CMakeFiles/DisplayImage.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/DisplayImage.dir/depend
 

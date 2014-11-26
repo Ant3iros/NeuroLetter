@@ -6,15 +6,15 @@
 
 #IncludeRegexTransform: 
 
-/root/NeuroLetter/Merge_final/DisplayImage.cpp
+/root/Desktop/NeuroLetter/Merge_final/DisplayImage.cpp
 stdio.h
 -
 opencv2/opencv.hpp
 -
 DisplayImage.hpp
-/root/NeuroLetter/Merge_final/DisplayImage.hpp
+/root/Desktop/NeuroLetter/Merge_final/DisplayImage.hpp
 opencv/highgui.h
-/root/NeuroLetter/Merge_final/opencv/highgui.h
+/root/Desktop/NeuroLetter/Merge_final/opencv/highgui.h
 SFML/Window.hpp
 -
 SFML/Graphics/Sprite.hpp
@@ -28,7 +28,7 @@ iostream
 SFML/Window/Input.hpp
 -
 
-/root/NeuroLetter/Merge_final/DisplayImage.hpp
+/root/Desktop/NeuroLetter/Merge_final/DisplayImage.hpp
 unistd.h
 -
 stdio.h
@@ -44,7 +44,7 @@ fstream
 opencv2/opencv.hpp
 -
 DisplayImage.hpp
-/root/NeuroLetter/Merge_final/DisplayImage.hpp
+/root/Desktop/NeuroLetter/Merge_final/DisplayImage.hpp
 opencv/highgui.h
-/root/NeuroLetter/Merge_final/opencv/highgui.h
+/root/Desktop/NeuroLetter/Merge_final/opencv/highgui.h
 

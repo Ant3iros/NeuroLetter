@@ -195,7 +195,7 @@ class DisplayImage
       //taille str
       //convert to string -> this->str.size();
       std::stringstream ss;
-      val = this->data[0].size() * this->data[0][0].size();
+      val = this->data[z].size() * this->data[z][0].size();
       ss << val;
       std::string test  = ss.str();
       outfile.write(test.c_str(), test.size());

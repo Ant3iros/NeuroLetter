@@ -4,7 +4,7 @@ SET(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 SET(CMAKE_DEPENDS_CHECK_CXX
-  "/root/NeuroLetter/Merge_final/DisplayImage.cpp" "/root/NeuroLetter/Merge_final/release/CMakeFiles/DisplayImage.dir/DisplayImage.cpp.o"
+  "/root/Desktop/NeuroLetter/Merge_final/DisplayImage.cpp" "/root/Desktop/NeuroLetter/Merge_final/release/CMakeFiles/DisplayImage.dir/DisplayImage.cpp.o"
   )
 SET(CMAKE_CXX_COMPILER_ID "GNU")
 
